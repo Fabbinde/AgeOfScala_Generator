@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ageOfScala" nsURI="http://www.xtext.de/mgse/aos/AgeOfScala"
+    nsPrefix="ageOfScala">
+  <eClassifiers xsi:type="ecore:EClass" name="Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ShowBuildings">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gebauede" eType="#//BuildingTypes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BuildBuilding">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="buildType" unique="false"
+        upperBound="-1" eType="#//BuildType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gebauede" eType="#//Buildings"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BuildType">
+    <eLiterals name="BUILD" literal="Baue"/>
+    <eLiterals name="DESTROY" value="1" literal="Zerstöre"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BuildingTypes">
+    <eLiterals name="HOUSE" literal="Wohngebäude"/>
+    <eLiterals name="PRODUCING" value="1" literal="Produzierendes Gebäude"/>
+    <eLiterals name="STOCK" value="2" literal="Lagergebäude"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Buildings">
+    <eLiterals name="LUMBERJACK" literal="Holzfäller"/>
+    <eLiterals name="MASON" value="1" literal="Steinmetz"/>
+    <eLiterals name="HUNTER" value="2" literal="Jäger"/>
+    <eLiterals name="FISHERMAN" value="3" literal="Fischerei"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,28 @@
+grammar de.xtext.mgse.aos.AgeOfScala with org.eclipse.xtext.common.Terminals
+
+generate ageOfScala "http://www.xtext.de/mgse/aos/AgeOfScala"
+
+Action:
+	action+=(ShowBuildings | BuildBuilding)+;
+
+ShowBuildings:
+	'Zeige alle' gebauede=BuildingTypes;
+
+BuildBuilding:
+	buildType+=BuildType
+	'Gebäude' gebauede=Buildings;
+
+enum BuildType:
+	BUILD='Baue' |
+	DESTROY='Zerstöre';
+
+enum BuildingTypes:
+	HOUSE='Wohngebäude' |
+	PRODUCING='Produzierendes Gebäude' |
+	STOCK='Lagergebäude';
+
+enum Buildings:
+	LUMBERJACK='Holzfäller' |
+	MASON='Steinmetz' |
+	HUNTER='Jäger' |
+	FISHERMAN='Fischerei';
